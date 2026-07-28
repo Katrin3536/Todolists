@@ -1,6 +1,6 @@
+import {FilterValues} from '@/features/todolists/model/todolists-reducer.ts';
+import {Task} from '@/features/todolists/model/tasks-reducer.ts';
 
-import {FilterValues} from './app/App.tsx';
-import {Task} from './Todolist/Todolist.tsx';
 
 export const getFilteredTasks = ( tasks:Task[], filter:FilterValues):Task[]=> {
     switch (filter) {

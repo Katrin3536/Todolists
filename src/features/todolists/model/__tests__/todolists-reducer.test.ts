@@ -1,12 +1,11 @@
 import { beforeEach,expect, test } from 'vitest'
-import {TodolistType} from '../app/App.tsx';
 import {
     changeTodolistFilterAC,
     changeTodolistTitleAC,
     createTodolistAC,
     deleteTodolistAC,
-    todolistsReducer
-} from './todolists-reducer.ts';
+    todolistsReducer, TodolistType
+} from '../todolists-reducer.ts';
 import {nanoid} from '@reduxjs/toolkit';
 
 let todolistId1:string;
@@ -41,7 +40,7 @@ test('correct todolist should be deleted', () => {
 test('correct todolist should be created', () => {
 
     // 2. Действие
-    const action = createTodolistAC('New Todolist')
+    const action = createTodolistAC('New TodolistItem')
 
     const endState = todolistsReducer(startState, action)
 
@@ -49,7 +48,7 @@ test('correct todolist should be created', () => {
     // в массиве останется один тудулист
     expect(endState.length).toBe(3)
     // удалится нужный тудулист, не любой
-    expect(endState[0].title).toBe('New Todolist')
+    expect(endState[2].title).toBe('New TodolistItem')
 
 })
 
