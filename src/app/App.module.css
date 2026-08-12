@@ -1,13 +1,10 @@
-
 /*!*.filter__btn-active {*! БЭМ методология */
 /*  background-color: lightgreen;*/
 /*}*/
 
-
 .task {
   font-weight: bold;
 }
-
 
 .app {
   display: flex;
